@@ -1,0 +1,15 @@
+#main-nav ul {
+    list-style-type: none;
+    padding: 10px 0;
+    background-color: #333;
+}
+
+#main-nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+#main-nav ul li a {
+    color: white;
+    text-decoration: none;
+}
