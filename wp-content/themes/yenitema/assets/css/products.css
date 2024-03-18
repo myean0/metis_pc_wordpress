@@ -1,0 +1,25 @@
+.product {
+    display: flex;
+}
+
+.prices {
+    position: absolute;
+    padding: 5px 0 0 15px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    right: 30px;
+}
+
+.price {
+    color: green;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.old-price {
+    font-size: 16px;
+    padding-right: 5px;
+    color: gray;
+    text-decoration: line-through;
+}

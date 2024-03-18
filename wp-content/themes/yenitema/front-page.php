@@ -36,7 +36,7 @@ wp_enqueue_style('front-page');
                     $i++;
                     ?>
                     <div class="carousel-item <?php echo ($i == 1) ? 'active' : " "; ?>">
-                        <div class="">
+                        <div>
                         <?php echo wp_get_attachment_image($image, 'full', false, ['class' => 'd-block w-100']); ?>
                         </div>
                         <div class="carousel-caption d-none d-md-block">

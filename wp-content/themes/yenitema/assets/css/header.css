@@ -1,6 +1,8 @@
 #menu-main-menu li a {
     color: white !important;
     text-decoration: none !important;
+
+    padding: 0 10px 0 0;
 }
 
 .navbar-brand {
