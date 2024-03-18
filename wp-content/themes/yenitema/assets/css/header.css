@@ -1,15 +1,11 @@
-#main-nav ul {
-    list-style-type: none;
-    padding: 10px 0;
-    background-color: #333;
+#menu-main-menu li a {
+    color: white !important;
+    text-decoration: none !important;
 }
 
-#main-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-#main-nav ul li a {
-    color: white;
-    text-decoration: none;
+.navbar-brand {
+    color: red !important;
+    font-size: 32px !important;
+    border-right: 1px solid white;
+    padding-right: 15px;
 }

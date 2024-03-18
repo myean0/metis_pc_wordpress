@@ -4,3 +4,10 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 24px;
+    max-width: 600px;
+    margin: auto;
+}
