@@ -9,7 +9,7 @@ wp_enqueue_style('products');
 
 <?php get_header(); ?>
 
-<div class="container my-5">
+<!-- <div class="container my-5">
 
     <?php
     $i = 0;
@@ -74,7 +74,7 @@ wp_enqueue_style('products');
         echo '</div>';
     }
     ?>
-</div>
+</div> -->
 
 <style>
     .card-img-top {
@@ -82,5 +82,67 @@ wp_enqueue_style('products');
         object-fit: cover !important;
     }
 </style>
+
+<div class="container my-5">
+    <?php
+    $args = array(
+        'post_type' => 'product',
+        'posts_per_page' => 12
+    );
+    $loop = new WP_Query($args);
+    if ($loop->have_posts()) {
+        echo '<div class="row">';
+        while ($loop->have_posts()):
+            $loop->the_post();
+            global $product;
+            $oldPrice = get_field('old_price', $product->get_id());
+            $newPrice = get_field('new_price', $product->get_id());
+            // Diğer ACF alanlarınızı burada çağırabilirsiniz.
+            ?>
+            <div class="col-md-3 mb-4">
+                <div class="card h-100" style="width: 18rem;">
+                    <div>
+                        <?php echo get_the_post_thumbnail($product->get_id(), 'full', ['class' => 'card-img-top']); ?>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <?php echo get_the_title(); ?>
+                        </h5>
+                        <p class="card-text">
+                            <?php echo get_the_excerpt(); ?>
+                        </p>
+                        <div class="product">
+                            <a href="<?php echo get_permalink(); ?>" class="btn btn-primary">Satın Al</a>
+                            <div class="prices">
+                                <?php if ($product->is_on_sale()) { ?>
+                                    <span class="old-price">
+                                        <?php echo wc_price($product->get_regular_price()); ?>
+                                    </span>
+                                    <span class="price">
+                                        <?php echo wc_price($product->get_sale_price()); ?>
+                                    </span>
+                                <?php } else { ?>
+                                    <span class="price">
+                                        <?php echo wc_price($product->get_price()); ?>
+                                    </span>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php if ($loop->current_post % 4 == 3) {
+                echo '</div><div class="row">';
+            } ?>
+            <?php
+        endwhile;
+        echo '</div>';
+    } else {
+        echo __('No products found');
+    }
+    wp_reset_postdata();
+    ?>
+
+</div>
 
 <?php get_footer(); ?>

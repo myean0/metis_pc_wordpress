@@ -1,13 +1,17 @@
 #menu-main-menu li a {
-    color: white !important;
-    text-decoration: none !important;
+  color: white !important;
+  text-decoration: none !important;
 
-    padding: 0 10px 0 0;
+  padding: 0 10px 0 0;
 }
 
 .navbar-brand {
-    color: red !important;
-    font-size: 32px !important;
-    border-right: 1px solid white;
-    padding-right: 15px;
+  color: red !important;
+  font-size: 32px !important;
+  border-right: 1px solid white;
+  padding-right: 15px;
+}
+
+body {
+  background-color: rgb(150, 150, 150) !important;
 }

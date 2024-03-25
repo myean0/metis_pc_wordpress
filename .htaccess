@@ -1,8 +1,8 @@
 
 # BEGIN WordPress
-# "BEGIN WordPress" ve "END WordPress" arasındaki yönergeler (satırlar)
-# dinamik olarak oluşturulmuştur ve yalnızca WordPress süzgeçleri ile düzenlenmelidir.
-# Bu imler arasındaki yönergelerde yapılan değişikliklerin üzerine yazılır.
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

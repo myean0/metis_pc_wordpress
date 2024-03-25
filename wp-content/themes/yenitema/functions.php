@@ -16,9 +16,6 @@ add_action('wp_enqueue_scripts', 'addcss'); // addcss fonksiyonunu çağırma
 
 function addjs() // js tanımlama fonksiyonu
 {
-    wp_register_script('bootstrapjs', get_template_directory_uri() . '/assets/js/bootstrap.js', array(), 1, 1);
-    wp_enqueue_script('bootstrapjs');
-
     wp_register_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.bundle.js', array(), 1, 1);
     wp_enqueue_script('bootstrap');
 }

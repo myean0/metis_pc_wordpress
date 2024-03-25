@@ -34,7 +34,14 @@
                     );
                     ?>
 
-                    <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <a class="btn btn-outline-success" href="<?php echo wc_get_cart_url(); ?>"
+                        title="<?php _e('View your shopping cart', 'your-theme-domain'); ?>">
+                        <?php echo sprintf(_n('%d Öğe', '%d Öğe', WC()->cart->get_cart_contents_count(), 'your-theme-domain'), WC()->cart->get_cart_contents_count()); ?>
+                        -
+                        <?php echo WC()->cart->get_cart_total(); ?>
+                    </a>
+
+                    <!-- <ul class=" navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Ana Sayfa</a>
                         </li>
@@ -53,7 +60,7 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
-                    </ul> -->
+                        </ul> -->
 
                     <!-- <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
